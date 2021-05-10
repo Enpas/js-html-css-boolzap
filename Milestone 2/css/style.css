@@ -82,9 +82,10 @@ body {
 
 .container .aside-left .chat-research .btn {
   position: absolute;
-  width: 20%;
+  width: calc(12% - 4px);
   height: 30px;
   padding: 20px;
+  z-index: 999;
   border: 1px solid #F5F5F5;
   border-right: none;
   background-color: #FFF;
@@ -100,16 +101,13 @@ body {
 
 .container .aside-left .chat-research input {
   position: absolute;
-  width: 85%;
+  width: calc(90% - 26px);
   height: 30px;
-  right: 10px;
+  right: 15px;
   padding: 20px;
   border: 1px solid #F5F5F5;
   border-left: 0;
   outline: none;
-}
-
-.container .aside-left .chat-research input::placeholder {
   font-family: 'Lato';
   font-weight: bold;
   font-size: 14px;
@@ -302,6 +300,7 @@ body {
   padding: 15px 15px;
   font-family: 'Lato';
   font-size: 16px;
+  font-weight: bold;
   border: 0;
   border-radius: 5px;
   outline: none;
