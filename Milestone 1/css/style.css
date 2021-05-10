@@ -27,7 +27,7 @@ body {
 .container {
   width: 80%;
   height: 95%;
-  min-width: 900px;
+  min-width: 950px;
 }
 
 .container .aside-left, .container .main-right {
