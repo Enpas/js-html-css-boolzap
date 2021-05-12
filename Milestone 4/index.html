@@ -101,10 +101,18 @@
       <section class="main-chat-section">
 
         <template>
-          <div class="message" v-for="message in contacts[currentContact].messages" :class="message.status">
-            <span>{{message.text}}</span>
-            <span class="message-info">{{message.date}}</span>
-            <i class="fas fa-chevron-down"></i>
+          <div class="message" 
+              v-for="(message, index) in contacts[currentContact].messages" :class="message.status">
+              <span>{{message.text}}</span>
+              <span class="message-info">{{message.date}}</span>
+              <i @click="(consoleVisible === contacts[currentContact].messages[index]) ? consoleVisible = undefined : consoleVisible = contacts[currentContact].messages[index]" 
+              class="fas fa-chevron-down">
+              </i>
+            <div class="message-settings" 
+              :class="{'active': consoleVisible === contacts[currentContact].messages[index]}">
+              <span>Message info</span>
+              <span @click="deleteMessage(index)">Delete message</span>
+            </div>
           </div>
         </template>
 

@@ -254,6 +254,7 @@ body {
   border-radius: 10px;
   font-size: 14px;
   font-weight: bold;
+  word-wrap: break-word;
 }
 
 .container .main-right .main-chat-section .message .message-info {
@@ -287,6 +288,31 @@ body {
   float: left;
   clear: both;
   background-color: #FFF;
+}
+
+.container .main-right .main-chat-section .message .message-settings {
+  position: absolute;
+  right: 5px;
+  top: 55%;
+  flex-direction: column;
+  background-color: #FFF;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+  display: none;
+  z-index: 999;
+}
+
+.container .main-right .main-chat-section .message .message-settings.active {
+  display: flex;
+}
+
+.container .main-right .main-chat-section .message .message-settings span {
+  cursor: pointer;
+  padding: 12px 23px;
+}
+
+.container .main-right .main-chat-section .message .message-settings span:hover {
+  background-color: #F5F5F5;
 }
 
 /* FOOTER */

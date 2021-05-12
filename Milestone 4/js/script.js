@@ -97,6 +97,7 @@ const app = new Vue({
     currentContact: 0,
     messageSent: '',
     research: '',
+    consoleVisible: undefined
 
   },
 
@@ -134,6 +135,11 @@ const app = new Vue({
           contact.visible = false; 
         }
       })
+    },
+
+    // funzione per eliminare il messaggio selezionato
+    deleteMessage(index) {
+      this.contacts[this.currentContact].messages.splice(index, 1);
     }
 
   }
