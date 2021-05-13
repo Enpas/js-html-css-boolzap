@@ -154,11 +154,17 @@ const app = new Vue({
       })
     },
 
-    // funzione per eliminare il messaggio selezionato
+    // funzione per eliminare il messaggio selezionato, andando a eliminare l'ultimo messaggio presente nella chat la proprietà "text" degli array "messages" diventa vuota
     deleteMessage(index) {
       this.contacts[this.currentContact].messages.splice(index, 1);
+      if (this.contacts[this.currentContact].messages.length === 0) {
+        this.contacts[this.currentContact].messages = [
+          {
+            text: ''
+          }
+        ]
+      }
     }
-
   }
 
 }); 
