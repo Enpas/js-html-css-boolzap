@@ -124,7 +124,24 @@ const app = new Vue({
           );
         }, 1000);
       } 
-    }, 
+    },
+    
+    // funzione per riportare la data dell'ultimo messaggio del contatto attivo
+    lastAccess(index) {
+      let timeAccess = this.contacts[index].messages;
+      return timeAccess[timeAccess.length - 1].date
+    },
+
+    // funzione per riportare il testo dell'ultimo messaggio del contatto attivo, troncato con '...' se più lungo di 30 caratteri, altrimenti per intero
+    lastMessage(index) {
+      let timeMessage = this.contacts[index].messages;
+      if (timeMessage[timeMessage.length - 1].text.length > 30) {
+        let slicedText = timeMessage[timeMessage.length - 1].text.slice(0,30);
+        return slicedText + '...'
+      } else {
+      return timeMessage[timeMessage.length - 1].text
+      }
+    },
 
     // funzione per ricercare i contatti nell'input in alto a sinistra sopra la lista, vengono visualizzati solo i contatti che contengono le lettere inserite dall'utente
     researchUser(str) {

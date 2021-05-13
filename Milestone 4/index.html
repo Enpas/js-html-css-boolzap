@@ -62,8 +62,8 @@
               <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contacts[currentContact].name">
               <div>
                 <span>{{contact.name}}</span>
-                <span class="last-message">{{contact.messages[contact.messages.length - 1].text}}</span>
-                <span class="last-acs-contact">{{contact.messages[contact.messages.length - 1].date}}</span>
+                <span class="last-message">{{lastMessage(index)}}</span>
+                <span class="last-acs-contact">{{lastAccess(index)}}</span>
               </div>
             </li> 
           </ul>
@@ -85,7 +85,7 @@
           
           <div class="name-access">
             <span class="contact-name">{{contacts[currentContact].name}}</span>
-            <span class="last-access">Ultimo accesso oggi alle {{contacts[currentContact].messages[contacts[currentContact].messages.length - 1].date}}</span>
+            <span class="last-access">Ultimo accesso: {{lastAccess(currentContact)}}</span>
           </div>
         </div>  
         
