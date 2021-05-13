@@ -97,7 +97,7 @@ const app = new Vue({
     currentContact: 0,
     messageSent: '',
     research: '',
-    consoleVisible: undefined
+    displayedChat: undefined
 
   },
 
@@ -134,12 +134,12 @@ const app = new Vue({
 
     // funzione per riportare il testo dell'ultimo messaggio del contatto attivo, troncato con '...' se più lungo di 30 caratteri, altrimenti per intero
     lastMessage(index) {
-      let timeMessage = this.contacts[index].messages;
-      if (timeMessage[timeMessage.length - 1].text.length > 30) {
-        let slicedText = timeMessage[timeMessage.length - 1].text.slice(0,30);
+      let messageSlice = this.contacts[index].messages;
+      if (messageSlice[messageSlice.length - 1].text.length > 30) {
+        let slicedText = messageSlice[messageSlice.length - 1].text.slice(0,30);
         return slicedText + '...'
       } else {
-      return timeMessage[timeMessage.length - 1].text
+      return messageSlice[messageSlice.length - 1].text
       }
     },
 
